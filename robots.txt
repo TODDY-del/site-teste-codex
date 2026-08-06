@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.codexcontabilidade.com.br/sitemap.xml
