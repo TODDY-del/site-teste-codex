@@ -69,7 +69,7 @@ tailwind.config = {
 <style>
 .font-headline-md, .font-headline-lg, .font-headline-lg-mobile, .font-display-lg { font-weight: 800 !important; }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.nav-link-active { border-bottom: 2px solid #bb001c; color: #bb001c; font-weight: 700; }
+.nav-link-active { border-bottom: 2px solid #bb001c; color: #bb001c; font-weight: 800; }
 @media (max-width: 767px) {
   .text-headline-lg { font-size: 38px !important; }
   .text-headline-lg-mobile { font-size: 27px !important; }
@@ -108,12 +108,12 @@ tailwind.config = {
 <div class="max-w-container-max-width mx-auto flex justify-between items-center h-full px-gutter">
 <a class="flex items-center" href="index.html" aria-label="CODEX Contabilidade e Empreendedorismo — página inicial"><img src="logo-CODEX.png" alt="CODEX Contabilidade e Empreendedorismo" class="h-11 w-auto" width="302" height="151"/></a>
 <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
-<a class="text-on-surface font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="index.html">Início</a>
-<a class="text-on-surface font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="sobre.html">Sobre</a>
+<a class="text-on-surface font-medium font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="index.html">Início</a>
+<a class="text-on-surface font-medium font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="sobre.html">Sobre</a>
 <a class="nav-link-active text-body-md" href="servicos.html" aria-current="page">Serviços</a>
-<a class="text-on-surface font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="blog.html">Blog</a>
-<a class="text-on-surface font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="faq.html">FAQ</a>
-<a class="text-on-surface font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="contato.html">Contato</a>
+<a class="text-on-surface font-medium font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="blog.html">Blog</a>
+<a class="text-on-surface font-medium font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="faq.html">FAQ</a>
+<a class="text-on-surface font-medium font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="contato.html">Contato</a>
 </nav>
 <div class="flex items-center gap-4">
 <a class="hidden sm:inline-flex bg-secondary text-white px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all" href="https://wa.me/5516997152729" rel="nofollow">Fale no WhatsApp</a>
@@ -130,12 +130,12 @@ tailwind.config = {
 <button class="text-primary" onclick="closeMobileMenu()" aria-label="Fechar menu"><span class="material-symbols-outlined text-3xl">close</span></button>
 </div>
 <nav class="flex flex-col px-gutter py-8 gap-2 overflow-y-auto flex-1" aria-label="Navegação mobile">
-<a class="px-4 py-3 rounded-lg font-bold text-primary hover:bg-surface-container-low transition-colors" href="index.html">Início</a>
-<a class="px-4 py-3 rounded-lg font-bold text-primary hover:bg-surface-container-low transition-colors" href="sobre.html">Sobre</a>
-<a class="px-4 py-3 rounded-lg font-bold text-secondary bg-secondary/5" href="servicos.html" aria-current="page">Serviços</a>
-<a class="px-4 py-3 rounded-lg font-bold text-primary hover:bg-surface-container-low transition-colors" href="blog.html">Blog</a>
-<a class="px-4 py-3 rounded-lg font-bold text-primary hover:bg-surface-container-low transition-colors" href="faq.html">FAQ</a>
-<a class="px-4 py-3 rounded-lg font-bold text-primary hover:bg-surface-container-low transition-colors" href="contato.html">Contato</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-primary hover:bg-surface-container-low transition-colors" href="index.html">Início</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-primary hover:bg-surface-container-low transition-colors" href="sobre.html">Sobre</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-secondary bg-secondary/5" href="servicos.html" aria-current="page">Serviços</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-primary hover:bg-surface-container-low transition-colors" href="blog.html">Blog</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-primary hover:bg-surface-container-low transition-colors" href="faq.html">FAQ</a>
+<a class="px-4 py-3 rounded-lg font-extrabold text-primary hover:bg-surface-container-low transition-colors" href="contato.html">Contato</a>
 </nav>
 <div class="p-gutter border-t border-surface-variant shrink-0">
 <a class="block text-center bg-secondary text-white px-8 py-3 rounded-full font-label-md" href="https://wa.me/5516997152729" rel="nofollow">Fale no WhatsApp</a>
@@ -180,14 +180,14 @@ function closeMobileMenu() {
 </div>
 </section>
 <!-- 2. Contabilidade Mensal -->
-<section class="py-section-padding-desktop bg-primary text-white">
+<section class="py-section-padding-desktop bg-primary-container text-white">
 <div class="max-w-container-max-width mx-auto px-gutter grid md:grid-cols-2 gap-16 items-center">
 <div>
 <div class="flex items-center gap-3 mb-6">
 <span class="material-symbols-outlined text-secondary text-3xl" aria-hidden="true">analytics</span>
 <h2 class="font-headline-md text-headline-md uppercase">Contabilidade Mensal</h2>
 </div>
-<p class="font-body-lg text-body-lg text-on-primary-fixed-variant mb-8">Gestão contábil completa e contínua. Processamos sua movimentação financeira, fiscal e patrimonial, entregando balancetes claros que servem como ferramenta real de tomada de decisão para o seu negócio.</p>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8">Gestão contábil completa e contínua. Processamos sua movimentação financeira, fiscal e patrimonial, entregando balancetes claros que servem como ferramenta real de tomada de decisão para o seu negócio.</p>
 <a href="contato.html" class="inline-block border-2 border-white text-white px-8 py-4 rounded-full font-label-md text-label-md uppercase hover:bg-white hover:text-primary transition-colors duration-300">Saiba mais</a>
 </div>
 <div class="rounded-lg overflow-hidden border border-white/10 shadow-xl">
@@ -219,7 +219,7 @@ function closeMobileMenu() {
 </div>
 </section>
 <!-- 4. ITR & Folha -->
-<section class="py-section-padding-desktop bg-primary text-white overflow-hidden relative">
+<section class="py-section-padding-desktop bg-primary-container text-white overflow-hidden relative">
 <div class="max-w-container-max-width mx-auto px-gutter relative z-10 grid md:grid-cols-2 gap-16 items-center">
 <div class="rounded-lg overflow-hidden order-2">
 <img class="w-full aspect-video object-cover transform hover:scale-105 transition-transform duration-700" loading="lazy" width="640" height="360" alt="Propriedade rural vista de cima, contexto de declaração de ITR" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv5LwRLEl3ojqG4TphJZLparYt_n2ITpGU-qTIAt5oFbQLpajnrI930Af6UQFcDbKlzLEpDFfSo5eT-kS3QOQ6oM1RYyfKPFdmwWEbySYYsTWK-rWn2Kx6F8RmHHNJZ1wvAibeFXsCblOBJ9QSADbGLJuXd4MFb605NyZwJ1C9ncDvUZdEP39VHC8ydRySjKRsiMIpQOmC5y6eYIBJmFbnzVY2j2391CMX0rEBWRi5mGiOuGkmFMh3Ug"/>
@@ -232,7 +232,7 @@ function closeMobileMenu() {
 <div>
 <p class="font-label-md text-label-md uppercase text-secondary tracking-widest mb-2">Imposto Territorial Rural</p>
 <h3 class="font-headline-md text-headline-md mb-4">Declaração de ITR</h3>
-<p class="text-on-primary-fixed-variant">Regularização de propriedades rurais com precisão técnica, evitando multas e garantindo a conformidade fiscal do seu patrimônio no campo.</p>
+<p class="text-on-primary-container">Regularização de propriedades rurais com precisão técnica, evitando multas e garantindo a conformidade fiscal do seu patrimônio no campo.</p>
 <a class="inline-block mt-4 text-white underline underline-offset-4 hover:text-secondary transition-colors" href="contato.html">Saiba mais</a>
 </div>
 </div>
@@ -241,7 +241,7 @@ function closeMobileMenu() {
 <div>
 <p class="font-label-md text-label-md uppercase text-secondary tracking-widest mb-2">Departamento Pessoal</p>
 <h3 class="font-headline-md text-headline-md mb-4">Folha de Pagamento</h3>
-<p class="text-on-primary-fixed-variant">Gestão completa da jornada do colaborador. Desde a admissão até o cálculo de encargos, férias e rescisões, com total segurança jurídica e pontualidade.</p>
+<p class="text-on-primary-container">Gestão completa da jornada do colaborador. Desde a admissão até o cálculo de encargos, férias e rescisões, com total segurança jurídica e pontualidade.</p>
 <a class="inline-block mt-4 text-white underline underline-offset-4 hover:text-secondary transition-colors" href="contato.html">Saiba mais</a>
 </div>
 </div>
@@ -252,7 +252,7 @@ function closeMobileMenu() {
 <!-- 5. Consultoria Empresarial -->
 <section class="py-section-padding-desktop bg-surface">
 <div class="max-w-container-max-width mx-auto px-gutter">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6 text-center md:text-left">
 <div class="max-w-2xl">
 <span class="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] mb-2 block">Crescimento Sustentável</span>
 <h2 class="font-headline-md text-headline-md text-primary uppercase">Consultoria Empresarial e Empreendedorismo</h2>
@@ -263,7 +263,7 @@ function closeMobileMenu() {
 <div class="md:col-span-2 bg-white rounded-lg p-12 shadow-sm border border-outline-variant hover:border-secondary transition-colors group">
 <div class="flex flex-col h-full justify-between">
 <div>
-<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+<div class="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center mb-8">
 <span class="material-symbols-outlined text-3xl" aria-hidden="true">trending_up</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary uppercase mb-6">Mentoria de Negócios</h3>
@@ -272,12 +272,12 @@ function closeMobileMenu() {
 <a href="contato.html" class="mt-12 flex items-center gap-4 text-secondary font-bold uppercase tracking-widest">Solicitar Consultoria <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
 </div>
-<div class="bg-primary rounded-lg p-12 shadow-lg flex flex-col justify-center items-center text-center">
+<div class="bg-primary-container rounded-lg p-12 shadow-lg flex flex-col justify-center items-center text-center">
 <div class="mb-8">
 <span class="material-symbols-outlined text-secondary text-6xl" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">rocket_launch</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-white uppercase mb-4">Mindset Empreendedor</h3>
-<p class="text-on-primary-fixed-variant">Apoio na estruturação da cultura organizacional e visão de futuro do empreendedor.</p>
+<p class="text-on-primary-container">Apoio na estruturação da cultura organizacional e visão de futuro do empreendedor.</p>
 <a href="sobre.html" class="mt-8 border border-white/20 px-6 py-3 rounded-full text-white text-label-md uppercase hover:bg-white hover:text-primary transition-all">Conheça nosso método</a>
 </div>
 </div>
@@ -342,6 +342,19 @@ window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 50) { header.classList.add('shadow-md'); header.classList.remove('shadow-sm'); }
   else { header.classList.add('shadow-sm'); header.classList.remove('shadow-md'); }
+});
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('opacity-100', 'translate-y-0');
+      entry.target.classList.remove('opacity-0', 'translate-y-10');
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('section > div').forEach(section => {
+  section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+  observer.observe(section);
 });
 </script>
 </body>
