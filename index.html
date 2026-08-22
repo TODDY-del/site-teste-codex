@@ -73,6 +73,29 @@ tailwind.config = {
 <style>
 .font-headline-md, .font-headline-lg, .font-headline-lg-mobile, .font-display-lg { font-weight: 800 !important; }
 .nav-link-active { border-bottom: 2px solid #bb001c; color: #bb001c; font-weight: 800; }
+.hero-solid { background-image: none !important; background-color: #0a1b3d !important; }
+/* Hero cinematografica: imagem a direita dissolvendo no azul solido a esquerda */
+.hero-cine-image img {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 14%, rgba(0,0,0,0.7) 30%, #000 48%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 14%, rgba(0,0,0,0.7) 30%, #000 48%, #000 100%);
+}
+.hero-cine-fade {
+  background: linear-gradient(100deg, #0a1b3d 0%, rgba(10,27,61,0.92) 20%, rgba(10,27,61,0.7) 38%, rgba(10,27,61,0.52) 54%, rgba(10,27,61,0.3) 70%, rgba(10,27,61,0.1) 86%, rgba(10,27,61,0) 100%);
+}
+.hero-cine-vignette {
+  background: linear-gradient(180deg, rgba(10,27,61,0.35) 0%, rgba(10,27,61,0) 30%, rgba(10,27,61,0) 55%, rgba(10,27,61,0.68) 100%);
+}
+@media (max-width: 767px) {
+  .hero-cine-image img {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.4) 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.4) 86%, transparent 100%);
+    object-position: 68% center;
+  }
+  .hero-cine-fade {
+    background: linear-gradient(180deg, rgba(10,27,61,0.5) 0%, rgba(10,27,61,0.66) 38%, rgba(10,27,61,0.86) 62%, #0a1b3d 88%);
+  }
+  .hero-cine-vignette { background: none; }
+}
 @media (max-width: 767px) {
   .text-headline-lg { font-size: 38px !important; }
   .text-headline-lg-mobile { font-size: 36px !important; }
@@ -207,8 +230,10 @@ function closeMobileMenu() {
 }
 </script>
 <main class="pt-20">
-<!-- Hero Section -->
-<section class="bg-primary-container relative overflow-hidden min-h-[600px] flex items-center">
+<!-- Hero Section — versao anterior (oculta; ativar pelo botao de teste no rodape) -->
+<section class="hidden bg-primary-container bg-[url('img-hero-mobile-02.png')] bg-cover bg-[center_25%] relative overflow-hidden min-h-[600px] flex items-center" id="hero-section">
+<div class="absolute inset-0 bg-black/70 no-fade" aria-hidden="true" id="hero-overlay-dark"></div>
+<div class="absolute inset-0 no-fade" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); -webkit-mask-image: linear-gradient(to right, black 0%, black 55%, transparent 85%); mask-image: linear-gradient(to right, black 0%, black 55%, transparent 85%);" aria-hidden="true" id="hero-overlay-blur"></div>
 <div class="max-w-container-max-width mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10 pt-section-padding-mobile pb-0 md:py-0">
 <div class="flex flex-col justify-center">
 <h1 class="font-headline-lg text-headline-lg-mobile md:text-display-lg text-on-primary mb-6 leading-tight">
@@ -226,11 +251,61 @@ Nossos Serviços
 </a>
 </div>
 </div>
-<div class="flex justify-center md:justify-end items-end mt-24 md:mt-0">
-<div class="relative w-full max-w-sm sm:max-w-md md:max-w-none aspect-[4/5] rounded-t-[60px] md:rounded-t-[100px] overflow-hidden border-x-4 border-t-4 border-white/10">
-<img class="w-full h-full object-cover" width="1402" height="1122" fetchpriority="high" alt="Consultora da CODEX em escritório moderno, transmitindo confiança e profissionalismo" src="img_hero_codex.png"/>
+<div class="flex justify-center md:justify-end items-end mt-24 md:mt-0" id="hero-image-wrapper">
+<div class="relative w-full max-w-sm sm:max-w-md md:max-w-md lg:max-w-lg aspect-[4/5] rounded-t-[60px] md:rounded-t-[100px] overflow-hidden border-x-4 border-t-4 border-white/10">
+<img class="w-full h-full object-cover" width="1402" height="1122" loading="lazy" alt="Consultora da CODEX em escritório moderno, transmitindo confiança e profissionalismo" src="img_hero_codex.png"/>
 </div>
 </div>
+</div>
+</section>
+<!-- Hero Section — versao padrao (cinematografica) -->
+<section class="bg-primary-container relative overflow-hidden min-h-[620px] md:min-h-[680px] flex items-center" id="hero-cinematic">
+<div class="absolute inset-0 no-fade hero-cine-image" aria-hidden="true" id="hero-cine-image">
+<img class="w-full h-full object-cover object-[center_58%]" width="1536" height="1024" fetchpriority="high" alt="" src="hero-01.png"/>
+</div>
+<div class="absolute inset-0 no-fade hero-cine-fade" aria-hidden="true"></div>
+<div class="absolute inset-0 no-fade hero-cine-vignette" aria-hidden="true"></div>
+<div class="max-w-container-max-width mx-auto px-gutter relative z-10 w-full py-section-padding-mobile md:py-24">
+<div class="max-w-2xl">
+<p class="font-label-md text-label-md uppercase tracking-[0.18em] text-tertiary-fixed-dim mb-5">Números inteligentes. Negócios mais fortes.</p>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-display-lg text-on-primary mb-6 leading-tight">
+SUA <span class="text-secondary">CONTABILIDADE</span> DESCOMPLICADA
+</h1>
+<p class="text-on-primary/80 font-body-lg text-body-lg mb-10 max-w-lg">
+Soluções contábeis modernas para empreendedores, empresas e produtores rurais em Igarapava/SP. Transformamos burocracia em resultados.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="https://wa.me/5516997152729" rel="nofollow" class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
+Falar com Consultor <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a href="servicos.html" class="border border-on-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white hover:text-primary-container transition-all text-center">
+Nossos Serviços
+</a>
+</div>
+</div>
+<ul class="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-6 mt-14 pt-8 border-t border-white/15 max-w-3xl">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl shrink-0" aria-hidden="true">verified_user</span>
+<div>
+<p class="text-on-primary font-label-md text-label-md mb-1">Time Especializado</p>
+<p class="text-on-primary/60 font-body-md text-label-md normal-case tracking-normal">Orientação personalizada em que você pode confiar.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl shrink-0" aria-hidden="true">fact_check</span>
+<div>
+<p class="text-on-primary font-label-md text-label-md mb-1">Precisão e Conformidade</p>
+<p class="text-on-primary/60 font-body-md text-label-md normal-case tracking-normal">Suas obrigações sempre em dia, sem dor de cabeça.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl shrink-0" aria-hidden="true">trending_up</span>
+<div>
+<p class="text-on-primary font-label-md text-label-md mb-1">Foco em Crescimento</p>
+<p class="text-on-primary/60 font-body-md text-label-md normal-case tracking-normal">Estratégias contábeis que geram resultado real.</p>
+</div>
+</li>
+</ul>
 </div>
 </section>
 <!-- Trust Bar -->
@@ -634,8 +709,29 @@ Solicitar Orçamento Grátis
 <div class="max-w-container-max-width mx-auto px-gutter mt-20 pt-8 border-t border-on-primary-fixed-variant text-center md:text-left">
 <p class="text-on-primary-fixed-variant text-label-md">© 2026 CODEX Contabilidade e Empreendedorismo. Todos os direitos reservados.</p>
 </div>
+<div class="max-w-container-max-width mx-auto px-gutter mt-4 flex flex-wrap gap-3">
+<button onclick="toggleHeroImage()" class="text-on-primary-fixed-variant text-label-md underline decoration-dotted underline-offset-4 opacity-60 hover:opacity-100 transition-opacity">teste: imagem (hero anterior)</button>
+<button onclick="toggleHeroBackground()" class="text-on-primary-fixed-variant text-label-md underline decoration-dotted underline-offset-4 opacity-60 hover:opacity-100 transition-opacity">teste: fundo azul sólido (hero anterior)</button>
+<button onclick="toggleHeroCinematic()" class="text-on-primary-fixed-variant text-label-md underline decoration-dotted underline-offset-4 opacity-60 hover:opacity-100 transition-opacity">teste: hero anterior</button>
+<button onclick="toggleHeroCinematicImage()" class="text-on-primary-fixed-variant text-label-md underline decoration-dotted underline-offset-4 opacity-60 hover:opacity-100 transition-opacity">teste: imagem da hero</button>
+</div>
 </footer>
 <script>
+function toggleHeroImage() {
+  document.getElementById('hero-image-wrapper').classList.toggle('hidden');
+}
+function toggleHeroBackground() {
+  document.getElementById('hero-section').classList.toggle('hero-solid');
+  document.getElementById('hero-overlay-dark').classList.toggle('hidden');
+  document.getElementById('hero-overlay-blur').classList.toggle('hidden');
+}
+function toggleHeroCinematic() {
+  document.getElementById('hero-section').classList.toggle('hidden');
+  document.getElementById('hero-cinematic').classList.toggle('hidden');
+}
+function toggleHeroCinematicImage() {
+  document.getElementById('hero-cine-image').classList.toggle('hidden');
+}
 function toggleAccordion(element) {
   const item = element.parentElement;
   const isActive = item.classList.contains('active');
@@ -651,7 +747,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, observerOptions);
-document.querySelectorAll('section > div').forEach(section => {
+document.querySelectorAll('section > div:not(.no-fade)').forEach(section => {
   section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
   observer.observe(section);
 });
